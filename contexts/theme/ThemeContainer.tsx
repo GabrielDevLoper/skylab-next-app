@@ -7,13 +7,13 @@ import {
 } from "@chakra-ui/core";
 
 import { ThemeProvider as EmotionThemeProvider } from "emotion-theming";
-import themes from "../../styles/theme";
+import theme from "../../styles/theme";
 
-const theme: React.FC = ({ children }) => {
+const ThemeContainer: React.FC = ({ children }) => {
   return (
-    <ChakraThemeProvider theme={themes}>
+    <ChakraThemeProvider theme={theme}>
       <ColorModeProvider value="dark">
-        <EmotionThemeProvider theme={themes}>
+        <EmotionThemeProvider theme={theme}>
           <CSSReset />
           {children}
         </EmotionThemeProvider>
@@ -22,4 +22,4 @@ const theme: React.FC = ({ children }) => {
   );
 };
 
-export default theme;
+export default ThemeContainer;
